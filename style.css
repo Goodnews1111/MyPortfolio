@@ -463,50 +463,74 @@ input:focus, .contact-form textarea:focus {
 }
 
 /* Mobile Responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    nav ul {
+    /* 1. Stack the navigation so it is no longer cramped */
+    nav {
+        flex-direction: column;
+        padding: 15px 10px;
         gap: 15px;
     }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
     nav h1 {
-        font-size: 20px;
+        font-size: 24px;
+        margin: 0;
     }
     nav ul li {
-        font-size: 13px;
+        font-size: 14px;
     }
+
+    /* 2. Adjust the main container spacing */
     .full {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
         margin: 15px;
-        padding: 20px;
+        padding: 30px 15px;
     }
+    
     .img1 {
         margin-left: 0;
         margin-bottom: 25px;
     }
+
+    /* 3. Fix the sideways image */
     .full img {
         width: 180px;
         height: 180px;
+        /* This rotates the image back upright. If it rotates the wrong way, change to 90deg */
+        transform: rotate(-90deg); 
     }
+    
     .full .stack h2 {
-        font-size: 28px;
+        font-size: 32px;
+        margin-bottom: 5px;
     }   
     .full .stack p {
         font-size: 14px;
-        line-height: 1.5;
+        line-height: 1.6;
     }
+    
     .skills {
         flex-direction: column;
         margin: 20px 0;
     }
+    
     .contact-form {
         width: 100%;
         padding: 20px;
     }
+    
     span {
         flex-direction: column;
         gap: 0;
     }
+    
     .project-list li:hover {
         transform: translateX(5px);
     }
